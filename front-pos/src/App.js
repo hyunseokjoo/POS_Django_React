@@ -1,14 +1,13 @@
-import Footer from "./containers/Footer";
-import Nav from "./containers/Nav";
+import Footer from './containers/Footer';
+import Nav from './containers/Nav';
+import Home from './pages/Home';
 
 function App() {
-  return (
-    <div>
-      <Nav>test</Nav>
-      App
-      <Footer>footer</Footer>
-    </div>
-  );
+    return (
+        <>
+            <Home></Home>
+        </>
+    );
 }
 
 export default App;
