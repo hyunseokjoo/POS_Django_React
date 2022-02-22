@@ -10,22 +10,21 @@
 
 .nav-container {
     display: flex;
+    align-items: center;
 }
 
 .nav-logo {
     flex: 1;
     border: 1px solid black;
-    justify-content: start;
+    text-align: center;
 }
 
 .nav-content {
-    flex: 2;
+    flex: 3;
     border: 1px solid black;
-    justify-content: center;
-    align-items: center;
 }
 
 .nav-menu {
-    justify-content: end;
-    align-items: center;
+    flex: 2;
+    border: 1px solid black;
 }
