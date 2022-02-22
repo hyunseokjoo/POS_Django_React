@@ -1,11 +1,9 @@
 @import '../common/shared.scss';
 
 .navbar {
-    max-width: 1024px;
+    max-width: $max-width;
     margin: auto;
     width: 100%;
-    border-style: solid;
-    border-width: 3px;
 }
 
 .nav-container {
@@ -15,16 +13,10 @@
 
 .nav-logo {
     flex: 1;
-    border: 1px solid black;
     text-align: center;
 }
 
-.nav-content {
-    flex: 3;
-    border: 1px solid black;
-}
-
 .nav-menu {
-    flex: 2;
-    border: 1px solid black;
+    flex: 6;
+    text-align: end;
 }

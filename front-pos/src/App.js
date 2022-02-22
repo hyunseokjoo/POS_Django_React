@@ -1,5 +1,4 @@
-import Footer from './containers/Footer';
-import Nav from './containers/Nav';
+import React from 'react';
 import Home from './pages/Home';
 
 function App() {

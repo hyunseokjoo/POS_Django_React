@@ -1,0 +1,8 @@
+@import '../common/shared.scss';
+
+.bodyContent {
+    max-width: $max-width;
+    margin: auto;
+    width: 100%;
+    border: 2px solid black;
+}

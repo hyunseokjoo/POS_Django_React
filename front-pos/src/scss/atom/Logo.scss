@@ -1,0 +1,56 @@
+@import '../common/shared.scss';
+
+@mixin logo-color($color) {
+    color: $color;
+    &:hover {
+        color: lighten($color, 10%);
+    }
+    &:active {
+        color: darken($color, 10%);
+    }
+}
+
+.logo {
+    font-size: 2em;
+    font-weight: bold;
+    &.large {
+        padding: 0.875rem 0.875rem;
+        font-size: 1.2rem;
+        margin: 0.1rem;
+    }
+    &.medium {
+        padding: 0.5rem 0.5rem;
+        font-size: 0.875rem;
+        margin: 0.1rem;
+    }
+    &.small {
+        padding: 0.4rem 0.3rem;
+        font-size: 0.7rem;
+        margin: 0.1rem;
+    }
+
+    &.primary {
+        @include logo-color($primary);
+    }
+    &.secondary {
+        @include logo-color($secondary);
+    }
+    &.success {
+        @include logo-color($success);
+    }
+    &.warning {
+        @include logo-color($warning);
+    }
+    &.danger {
+        @include logo-color($danger);
+    }
+    &.light {
+        @include logo-color($light);
+    }
+    &.dark {
+        @include logo-color($dark);
+    }
+    &.cyan {
+        @include logo-color($cyan);
+    }
+}

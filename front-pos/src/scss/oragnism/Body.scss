@@ -1,0 +1,27 @@
+@import '../common/shared.scss';
+
+.body {
+    max-width: $max-width;
+    margin: auto;
+    width: 100%;
+    border: 2px solid black;
+}
+
+.body-container {
+    display: flex;
+    align-items: center;
+}
+
+.body-left {
+    flex: 8;
+    justify-content: start;
+    margin: 2px;
+    border: 2px solid black;
+}
+
+.body-right {
+    flex: 2;
+    justify-content: end;
+    margin: 2px;
+    border: 2px solid black;
+}

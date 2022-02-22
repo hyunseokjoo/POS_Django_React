@@ -1,13 +1,13 @@
 import React from 'react';
-import Nav from '../containers/Nav';
-import Footer from '../containers/Footer';
+import Body from '../components/oragnism/Body';
+import Layout from '../components/templates/Layout';
 
 const Home = () => {
     return (
         <>
-            <Nav>test</Nav>
-            App
-            <Footer>footer</Footer>
+            <Layout>
+                <Body />
+            </Layout>
         </>
     );
 };

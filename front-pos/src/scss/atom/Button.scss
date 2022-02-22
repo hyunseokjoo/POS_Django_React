@@ -58,12 +58,15 @@
     &.dark {
         @include button-color($dark);
     }
+    &.cyan {
+        @include button-color($cyan);
+    }
 }
 
 @mixin button-border-color($color) {
     background: $white;
     color: gray;
-    border: 2px solid $color;
+    border: 1px solid $color;
     &:hover {
         transition-duration: 0.4s;
         background: $color;
@@ -121,5 +124,8 @@
     }
     &.dark {
         @include button-border-color($dark);
+    }
+    &.cyan {
+        @include button-border-color($cyan);
     }
 }
