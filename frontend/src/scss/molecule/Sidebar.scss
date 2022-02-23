@@ -2,7 +2,11 @@
 
 .sidebar {
     max-width: $max-width;
-    width: 100%;
-    margin: auto;
-    border: 2px solid black;
+    width: 95%;
+    margin: 0 auto;
+    height: 300px;
+    border: 1px solid #bfbfbf;
+    border-radius: 2%;
+    background-color: white;
+    box-shadow: 3px 7px 5px #aaaaaa;
 }

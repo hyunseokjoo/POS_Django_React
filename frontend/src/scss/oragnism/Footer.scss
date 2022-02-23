@@ -6,9 +6,12 @@
     width: 100%;
     bottom: 0px;
     font-size: 6px;
+    display: flex;
 }
 
 .footer-container {
-    display: flex;
+    margin-top: 20px;
+    flex: 10;
+    text-align: center;
     align-items: center;
 }
