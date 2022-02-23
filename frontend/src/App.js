@@ -1,10 +1,10 @@
 import React from 'react';
-import Home from './pages/Home';
+import PageIndex from './pages/';
 
 function App() {
     return (
         <>
-            <Home></Home>
+            <PageIndex></PageIndex>
         </>
     );
 }

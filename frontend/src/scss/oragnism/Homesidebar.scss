@@ -1,6 +1,7 @@
-@import '../common/shared.scss';
+@import '../common/shared_val.scss';
+@import '../common/shared_mixin.scss';
 
-.sidebar {
+.homesidebar {
     max-width: $max-width;
     width: 95%;
     margin: 0 auto;
@@ -8,5 +9,6 @@
     border: 1px solid #bfbfbf;
     border-radius: 2%;
     background-color: white;
-    box-shadow: 3px 7px 5px #aaaaaa;
+
+    @include box-shadow-cyan();
 }

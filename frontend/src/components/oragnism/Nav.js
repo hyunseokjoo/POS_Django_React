@@ -9,7 +9,7 @@ const Nav = () => {
             <div className="navbar">
                 <div className="nav-container">
                     <div className="nav-logo">
-                        <Logo size="large" color="cyan"></Logo>
+                        <Logo size="large" color="cyan" />
                     </div>
                     <div className="nav-menu">
                         <NavButtonGrp />

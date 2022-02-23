@@ -1,5 +1,4 @@
 import React from 'react';
-import '../../scss/molecule/Sidebar.scss';
 import Button from '../atom/Button';
 
 const NavButtonGrp = () => {

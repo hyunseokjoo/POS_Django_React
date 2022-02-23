@@ -1,23 +1,23 @@
-@import '../common/shared.scss';
+@import '../common/shared_val.scss';
 
-.body {
+.homebody {
     max-width: $max-width;
     margin: auto;
     width: 100%;
 }
 
-.body-container {
+.homebody-container {
     display: flex;
     align-items: flex-start;
 }
 
-.body-left {
+.homebody-left {
     flex: 8;
     width: 100%;
     margin: 0 auto;
 }
 
-.body-right {
+.homebody-right {
     flex: 2;
     justify-content: end;
     width: 100%;

@@ -1,13 +1,10 @@
 import React from 'react';
-import Body from '../components/oragnism/Body';
-import Layout from '../components/templates/Layout';
+import Homebody from '../components/templates/Homebody';
 
 const Home = () => {
     return (
         <>
-            <Layout>
-                <Body />
-            </Layout>
+            <Homebody />
         </>
     );
 };

@@ -5,9 +5,9 @@ import Footer from '../oragnism/Footer';
 const Layout = ({ children }) => {
     return (
         <>
-            <Nav></Nav>
+            <Nav />
             {children}
-            <Footer></Footer>
+            <Footer />
         </>
     );
 };

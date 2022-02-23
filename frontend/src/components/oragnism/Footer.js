@@ -5,7 +5,7 @@ const Footer = () => {
     return (
         <>
             <div className="footer">
-                <div className="footer-container">@copyright : HyunSeok Joo</div>
+                <div className="footer-container">&copy; 2022 HyunSeok Joo.</div>
             </div>
         </>
     );
