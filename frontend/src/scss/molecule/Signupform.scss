@@ -1,0 +1,35 @@
+@import '../common/shared_val.scss';
+@import '../common/shared_mixin.scss';
+
+.Signupform {
+    max-width: $max-width;
+    width: 100%;
+    margin: 0 auto;
+    border: 1px solid #bfbfbf;
+    border-radius: 2%;
+    background-color: white;
+    height: 500px;
+    display: flex;
+
+    @include box-shadow-cyan();
+}
+
+.container{
+    width: 40%;
+    margin: 10px auto;
+    border: 1px solid #bfbfbf;
+    border-radius: 6px;
+
+    .sect{
+        width: 90%;
+        margin: 4px auto;
+    }
+
+    .sect-button{
+        width: 91%;
+        margin: 4px auto;
+    }
+
+    @include box-shadow-cyan();
+}
+

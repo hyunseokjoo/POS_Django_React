@@ -1,9 +1,10 @@
 import React from 'react';
+import Signupform from '../../components/molecule/Signupform';
 
 const Signup = () => {
     return (
         <>
-            <div>Signup</div>
+            <Signupform />
         </>
     );
 };

@@ -4,7 +4,9 @@ import '../../scss/oragnism/Homebodycontent.scss';
 const Homebodycontent = () => {
     return (
         <>
-            <div className="homebodycontent">BodyContent</div>
+            <div className="homebodycontent">
+                BodyContent
+            </div>
         </>
     );
 };
