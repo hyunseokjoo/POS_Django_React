@@ -18,6 +18,8 @@ class User(AbstractUser):
         upload_to="accounts/avatar/%Y/%m/%d",
         help_text="48 * 48px 크기의 png/jpg 파일을 업로드 해주세요"
     )
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     @property
     def name(self):

@@ -1,6 +1,7 @@
 
 import os
 from os.path import abspath, dirname, join
+from datetime import timedelta
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = dirname(dirname(dirname(abspath(__file__))))
@@ -29,6 +30,7 @@ INSTALLED_APPS = [
     # third party apps
     'corsheaders',
     "debug_toolbar",
+    'rest_framework',
     # local apps
     'accounts',
 ]
@@ -102,13 +104,13 @@ AUTH_USER_MODEL = "accounts.User"
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Seoul'
 
 USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)
@@ -126,3 +128,20 @@ INTERNAL_IPS = ["127.0.0.1",]
 CORS_ORIGIN_WHITELIST = ['http://127.0.0.1:3000' ,'http://localhost:3000']
 CORS_ALLOW_CREDENTIALS = True
 
+
+
+REST_FRAMEWORK = {
+    "DEFAULT_PERMISSION_CLASSES": ["rest_framework.permissions.IsAuthenticated",],
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        "rest_framework_jwt.authentication.JSONWebTokenAuthentication",
+        "rest_framework.authentication.SessionAuthentication",
+    ],
+}
+
+JWT_AUTH = {
+    "JWT_SECRET_KEY": SECRET_KEY,
+    "JWT_ALGORITHM": "HS256",
+    "JWT_ALLOW_REFRESH": True,
+    "JWT_EXPIRATION_DELTA": timedelta(days=7),
+    "JWT_REFRESH_EXPIRATION_DELTA": timedelta(days=28),
+}
