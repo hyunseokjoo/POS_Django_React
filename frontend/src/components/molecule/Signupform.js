@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Axios from 'axios';
 import Input from '../atom/Input';
 import Button from '../atom/Button';
 import classNames from 'classnames';
@@ -7,6 +8,20 @@ import Label from '../atom/Lable';
 
 const Signupform = ({ size, color }) => {
     const [signupData, setSignupData] = useState({});
+
+    const fn_signup = (e) => {
+        e.preventDefault();
+        const data = signupData;
+        console.log(data);
+        Axios.post('http://localhost:8000/accounts/signup', data)
+            .then((res) => {
+                console.log(1);
+                console.log(res.data);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    };
 
     const onChange = (e) => {
         const { name, value } = e.target;
@@ -34,7 +49,7 @@ const Signupform = ({ size, color }) => {
                     <Button type="button" size="small" color="cyan" border="true">
                         뒤로가기
                     </Button>
-                    <Button type="submit" size="small" color="cyan">
+                    <Button type="submit" size="small" color="cyan" onClick={fn_signup}>
                         회원가입
                     </Button>
                 </div>
