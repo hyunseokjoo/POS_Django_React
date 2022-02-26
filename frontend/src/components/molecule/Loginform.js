@@ -1,26 +1,21 @@
 import React,{ useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAlert } from 'react-alert';
+import { useDispatch } from 'react-redux';
+import { setToken } from '../../store/jwt';
 import Axios from 'axios';
 import Input from '../atom/Input';
 import Button from '../atom/Button';
 import classNames from 'classnames';
 import Label from '../atom/Lable';
 import '../../scss/molecule/Loginform.scss';
-import { setToken } from '../../store/jwt';
-import { useDispatch, useSelector } from 'react-redux';
+
+
 
 const Loginform = () => {
-    const fn_set_Token = (token) =>{
-        dispatch(setToken(token));
-    }
-
-    const state = useSelector(state => state);
-
     const navigate = useNavigate();
     const alert = useAlert();
     const dispatch = useDispatch();
-
     const [loginData, setLoginData]= useState({});
 
     const fn_login = (e) => {
@@ -29,18 +24,17 @@ const Loginform = () => {
         .then((res) => {
             console.log(res.data);
             fn_set_Token(res.data.token);
-            alert.success('환영합니다.');
-            //navigate('/');
-            
+            alert.success(`환영합니다. ${res.data.username}님`);
+            navigate('/');
         })
         .catch((err) => {
             console.log(err.response.data);
+            alert.error(err.response.data);
         });
     }
 
-    const fn_check = (e) => {
-        e.preventDefault();
-        console.log(state);
+    const fn_set_Token = (token) =>{
+        dispatch(setToken(token));
     }
 
     const onChange= (e) => {
@@ -78,9 +72,6 @@ const Loginform = () => {
                     </Button>
                     <Button type="submit" size="small" color="cyan" onClick={fn_login}>
                         로그인
-                    </Button>
-                    <Button type="submit" size="small" color="cyan" onClick={fn_check}>
-                        로그인2
                     </Button>
                 </div>
             </div>

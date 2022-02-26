@@ -5,6 +5,7 @@ export const setToken = jwtToken => ({ type: SET_TOKEN, jwtToken })
 export const removeToken = () => ({ type: REMOVE_TOKEN })
 
 const jwtTokenState = {
+    is_logined : false,
     jwtToken : ""
 };
 
@@ -14,11 +15,14 @@ const jwtReducer = (state = jwtTokenState , action) => {
             localStorage.setItem('jwtToken', action.jwtToken);
             return {
                 ...state,
+                is_logined : true,
                 jwtToken: action.jwtToken
             };
         case REMOVE_TOKEN:
+            localStorage.removeItem('jwtToken');
             return {
                 ...state,
+                is_logined : false,
                 jwtToken: ""
             };
         default:

@@ -23,6 +23,7 @@ class LoginView(APIView):
             return Response({"message": "Request Body Error."}, status=status.HTTP_409_CONFLICT)
 
         response = {
+            'username': serializer.data['username'],
             'success': True,
             'token': serializer.data['token']
         }
