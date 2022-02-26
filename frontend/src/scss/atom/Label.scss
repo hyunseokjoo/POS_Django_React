@@ -20,6 +20,9 @@
         font-size: 0.3rem;
     }
 
+    &.danger {
+        @include label-color($danger);
+    }
    
     &.cyan {
         @include  label-color($cyan);

@@ -1,9 +1,10 @@
 import React from 'react';
+import Loginform from '../../components/molecule/Loginform';
 
 const Login = () => {
     return (
         <>
-            <div>Login</div>
+            <Loginform/>
         </>
     );
 };

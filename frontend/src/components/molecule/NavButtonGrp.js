@@ -6,12 +6,10 @@ const NavButtonGrp = () => {
     const navigate = useNavigate();
 
     const onClickLogin = (e) => {
-        e.preventDefault();
         navigate('/accounts/login');
     };
 
     const onClickSignup = (e) => {
-        e.preventDefault();
         navigate('/accounts/signup');
     };
 
