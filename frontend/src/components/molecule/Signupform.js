@@ -8,11 +8,9 @@ import classNames from 'classnames';
 import Label from '../atom/Lable';
 import '../../scss/molecule/Signupform.scss';
 
-
 const Signupform = () => {
     const navigate = useNavigate();
     const alert = useAlert();
-
     const [signupData, setSignupData] = useState({});
 
     const fn_signup = (e) => {
@@ -21,19 +19,19 @@ const Signupform = () => {
         console.log(data);
         if (signupData.password === signupData.password_con) {
             Axios.post('http://localhost:8000/accounts/signup/', data)
-            .then((res) => {
-                console.log(res.data);
-                alert.info('회원가입 성공')
-                navigate("/accounts/login")
-            })
-            .catch((err) => {
-                console.log(err);
-                console.log(err.response.data);
-                const {username, password} = err.response.data
-                alert.error(username, password);
-            });
-        }else {
-            alert.error('비밀번호가 서로 맞지 않습니다.')
+                .then((res) => {
+                    console.log(res.data);
+                    alert.info('회원가입 성공');
+                    navigate('/accounts/login');
+                })
+                .catch((err) => {
+                    console.log(err);
+                    console.log(err.response.data);
+                    const { username, password } = err.response.data;
+                    alert.error(username, password);
+                });
+        } else {
+            alert.error('비밀번호가 서로 맞지 않습니다.');
         }
     };
 
@@ -48,16 +46,16 @@ const Signupform = () => {
         );
     };
 
-    const onBack = (e) =>{
-        navigate(-1)
-    }
+    const onBack = (e) => {
+        navigate(-1);
+    };
 
     return (
         <form className={classNames('Signupform')}>
             <div className="container">
                 <div className="header">
                     회원가입
-                    <hr/>
+                    <hr />
                 </div>
                 <div className="sect">
                     <Label color="cyan">ID</Label>
@@ -70,8 +68,13 @@ const Signupform = () => {
                 <div className="sect">
                     <Label color="cyan">Password_Con</Label>
                     <Input type="password" name="password_con" color="cyan" onChange={onChange} />
-                    {signupData.password === signupData.password_con
-                    ? "" : <Label size="small" color="danger">비밀번호가 일치하지 않습니다.</Label> }
+                    {signupData.password === signupData.password_con ? (
+                        ''
+                    ) : (
+                        <Label size="small" color="danger">
+                            비밀번호가 일치하지 않습니다.
+                        </Label>
+                    )}
                 </div>
                 <div className="sect-button">
                     <Button type="button" size="small" color="cyan" border="true" onClick={onBack}>

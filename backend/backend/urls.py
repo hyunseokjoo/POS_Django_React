@@ -2,13 +2,14 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
+from rest_framework.authtoken.views import obtain_auth_token
 
 urlpatterns = [
+    path('api-token-auth/', obtain_auth_token),
     path('admin/', admin.site.urls),
     path('accounts/', include('accounts.urls')),
+    path('menu/', include('menu.urls')),
 ]
-
-
 
 if settings.DEBUG:
     # MEDIA_URL (/media/) 경로로 오게 되면, media_root 경로에 있는 파일을 찾아 반환하겠다.

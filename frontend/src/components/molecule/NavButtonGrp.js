@@ -7,7 +7,7 @@ import Button from '../atom/Button';
 const NavButtonGrp = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
-    const is_logined = useSelector(state=> state.jwtReducer.is_logined)
+    const is_logined = useSelector((state) => state.jwtReducer.is_logined);
 
     const onClickLogin = (e) => {
         navigate('/accounts/login');
@@ -16,7 +16,7 @@ const NavButtonGrp = () => {
     const onClickLogout = (e) => {
         console.log('logout');
         dispatch(removeToken());
-        //navigate('/accounts/login');
+        navigate('/');
     };
 
     const onClickSignup = (e) => {
@@ -25,19 +25,20 @@ const NavButtonGrp = () => {
 
     return (
         <>
-            {is_logined ? 
-            <Button size="small" type="button" color="gray" border="true" onClick={onClickLogout}>
-                Log out
-            </Button>
-            :<Button size="small" type="button" color="cyan" border="true" onClick={onClickLogin}>
-                Log in
-            </Button>
-            
-            }
-            
-            <Button size="small" color="cyan" onClick={onClickSignup}>
-                SignUp
-            </Button>
+            {is_logined ? (
+                <Button size="small" type="button" color="gray" border="true" onClick={onClickLogout}>
+                    Log out
+                </Button>
+            ) : (
+                <div>
+                    <Button size="small" type="button" color="cyan" border="true" onClick={onClickLogin}>
+                        Log in
+                    </Button>
+                    <Button size="small" color="cyan" onClick={onClickSignup}>
+                        SignUp
+                    </Button>
+                </div>
+            )}
         </>
     );
 };

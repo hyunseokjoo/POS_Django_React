@@ -29,10 +29,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # third party apps
     'corsheaders',
-    "debug_toolbar",
+    'debug_toolbar',
     'rest_framework',
+    'rest_framework.authtoken',
     # local apps
     'accounts',
+    'menu',
 ]
 
 MIDDLEWARE = [
@@ -136,7 +138,6 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.IsAuthenticated', # 인증된 사용자만 접근 가능
         'rest_framework.permissions.IsAdminUser', # 관리자만 접근 가능
         'rest_framework.permissions.AllowAny', # 누구나 접근 가능
-
     ),
     'DEFAULT_RENDERER_CLASSES': (
         # 자동으로 json으로 바꿔줌

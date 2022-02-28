@@ -1,4 +1,4 @@
-import React,{ useState } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAlert } from 'react-alert';
 import { useDispatch } from 'react-redux';
@@ -10,34 +10,32 @@ import classNames from 'classnames';
 import Label from '../atom/Lable';
 import '../../scss/molecule/Loginform.scss';
 
-
-
 const Loginform = () => {
     const navigate = useNavigate();
     const alert = useAlert();
     const dispatch = useDispatch();
-    const [loginData, setLoginData]= useState({});
+    const [loginData, setLoginData] = useState({});
 
     const fn_login = (e) => {
         e.preventDefault();
-        Axios.post("http://localhost:8000/accounts/login/",loginData)
-        .then((res) => {
-            console.log(res.data);
-            fn_set_Token(res.data.token);
-            alert.success(`환영합니다. ${res.data.username}님`);
-            navigate('/');
-        })
-        .catch((err) => {
-            console.log(err.response.data);
-            alert.error(err.response.data);
-        });
-    }
+        Axios.post('http://localhost:8000/accounts/login/', loginData)
+            .then((res) => {
+                console.log(res.data);
+                fn_set_Token(res.data.token);
+                alert.success(`환영합니다. ${res.data.username}님`);
+                navigate('/');
+            })
+            .catch((err) => {
+                console.log(err.response.data);
+                alert.error(err.response.data);
+            });
+    };
 
-    const fn_set_Token = (token) =>{
+    const fn_set_Token = (token) => {
         dispatch(setToken(token));
-    }
+    };
 
-    const onChange= (e) => {
+    const onChange = (e) => {
         const { name, value } = e.target;
         setLoginData(
             (prevstate) => ({
@@ -46,17 +44,17 @@ const Loginform = () => {
             }),
             console.log(loginData)
         );
-    }
+    };
 
-    const onBack = (e) =>{
-        navigate(-1)
-    }
+    const onBack = (e) => {
+        navigate(-1);
+    };
     return (
         <form className={classNames('Loginform')}>
             <div className="container">
                 <div className="header">
                     로그인
-                    <hr/>
+                    <hr />
                 </div>
                 <div className="sect">
                     <Label color="cyan">ID</Label>
