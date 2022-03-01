@@ -9,12 +9,13 @@ class TimestampedModel(models.Model):
         abstract = True
 
 class Category(TimestampedModel):
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='category', on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
+    display_seq = models.IntegerField(default=0)
 
 
 class Product(TimestampedModel):
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='product', on_delete=models.CASCADE)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     name = models.CharField(max_length=50)
     price = models.CharField(max_length=500)

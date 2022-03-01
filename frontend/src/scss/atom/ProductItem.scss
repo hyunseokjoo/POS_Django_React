@@ -1,0 +1,31 @@
+@import '../common/shared_val.scss';
+
+@mixin productItem-color($color) {
+    background: lighten($color, 35%);
+    color: gray;
+    &:hover {
+        background: lighten($color, 40%);
+    }
+    &:active {
+        background: lighten($color, 30%);
+    }
+}
+
+.ProductItem{
+    max-width: 120px;
+    min-width: 90px;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    margin: 2px;
+    text-align: center;
+    display: inline-block;
+    &.cyan {
+        @include  productItem-color($cyan);
+    }
+}
+
+.pro-container{
+    width: 100%;
+    margin: 5px auto;
+}
+
