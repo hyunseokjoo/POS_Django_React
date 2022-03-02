@@ -87,7 +87,7 @@ const Homebodycontent = () => {
                 </ScrollMenu>
                 <hr/>
                 <ScrollMenu wheel={true}>
-                    <Product products={products} color='cyan' onClick={fn_product_selected}/>
+                    <Product products={products} color='cyan'/>
                 </ScrollMenu>
             </div>
         </>
