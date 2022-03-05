@@ -12,7 +12,8 @@ const PageIndex = () => {
         <>
             <Layout>
                 <Routes>
-                    {is_logined ?<Route path="/" element={<Home />} />: <Route path="/" element={<Navigate replace to="/accounts/login" />} />}
+                    {is_logined ?<Route path="/" element={<Home />} />: 
+                    <Route path="/" element={<Navigate replace to="/accounts/login" />} />}
                     <Route path="accounts/*" element={<Accounts />} />
                 </Routes>
             </Layout>

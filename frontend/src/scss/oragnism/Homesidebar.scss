@@ -12,3 +12,20 @@
 
     @include box-shadow-cyan();
 }
+
+.homesidebar_container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.homesidebar_upside{
+    margin-bottom: auto;
+    width: 100%;
+}
+
+.homesidebar_bottomside{
+    margin-top: auto;
+    width: 100%;
+}

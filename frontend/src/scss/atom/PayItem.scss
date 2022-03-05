@@ -1,0 +1,41 @@
+@import '../common/shared_val.scss';
+
+.PayItem{
+    width: 96%;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    margin: 2px;
+    display: flex;
+}
+
+
+.payItem_left{
+    flex: 4;
+    width: 100%;
+    margin: 5px auto;
+    font-size: 5%;
+}
+
+.payItem_center{
+    flex: 3;
+    width: 100%;
+    font-size: 5%;
+    margin: 5px auto;
+}
+
+.payItem_right{
+    flex: 4;
+    width: 100%;
+    font-size: 5%;
+    margin: 5px auto;
+}
+
+.number{
+    width: 15px;
+    text-align: center;
+    display: inline-block;
+}
+
+button{
+    border: 0;
+}

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import produce from 'immer';
+import { useSelector } from 'react-redux';
 import { ScrollMenu } from 'react-horizontal-scrolling-menu';
 import Category from '../molecule/Category';
 import Product from '../molecule/Product';
@@ -9,7 +8,6 @@ import '../../scss/oragnism/Homebodycontent.scss';
 
 
 const Homebodycontent = () => {
-    const dispatch = useDispatch();
     const jwtToken = useSelector((state) => state.jwtReducer.jwtToken);
 
     const [categories, setCategories] = useState([]);
@@ -23,7 +21,7 @@ const Homebodycontent = () => {
     useEffect(() => {
         Axios.get('http://localhost:8000/menu/categories/', { headers: { Authorization: `JWT ${jwtToken}` } })
             .then((res) => {
-                console.log(res.data);
+                // console.log(res.data);
                 if (res.data.length !== 0 ){
                     setCategories(res.data);  
                     setCategoryID(res.data[0].id) 
@@ -43,9 +41,10 @@ const Homebodycontent = () => {
             params: { category : categoryID }, 
         })
         .then((res) => {
+            // console.log(res.data);
             setProducts(res.data);   
-            console.log(`category ID : ${categoryID}`);  
-            console.log(`category products  : ${products}`);  
+            // console.log(`category ID : ${categoryID}`);  
+            // console.log(`category products  : ${products}`);  
         })
         .catch((err) => {
             console.log(err.response.data);
@@ -54,11 +53,11 @@ const Homebodycontent = () => {
 
     //todo: 상품 내용 가져오기 중 오류 발생하여 처리 중
     useEffect(() => {
-        console.log(productID);
-        console.log(products);
-        console.log(products.filter((product) => product.id === productID));
+        // console.log(productID);
+        // console.log(products);
+        // console.log(products.filter((product) => product.id === productID));
         setSeletedProduct(products.filter((product) => product.id === productID))
-        console.log(seletedProduct);
+        // console.log(seletedProduct);
     }, [productID]);
 
     //카테고리 변경 시 
@@ -72,11 +71,6 @@ const Homebodycontent = () => {
         else {
             console.log('현재 카테고리와 같습니다.');
         }
-    }
-
-    const fn_product_selected = (e) => {
-        console.log(e.target.id);
-        setProductID(e.target.id);
     }
 
     return (

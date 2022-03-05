@@ -12,30 +12,53 @@ export const setItem = product => {
 };
 export const removeItem = product => {
     return { 
-        type: SET_ITEM, 
+        type: REMOVE_ITEM, 
         payload : product,
     };
 };
-export const plusItem = () => ({ type: PLUS_ITEM })
-export const minusItem = () => ({ type: MINUS_ITEM })
+export const plusItem = product => {
+    return {
+        type: PLUS_ITEM, 
+        payload: product,
+    }
+}
+export const minusItem = product => {
+    return { 
+        type: MINUS_ITEM, 
+        payload: product,
+    }
+}
 export const payItem = () => ({ type: PAY_ITEM })
 
-const iniItemListState = [
-    {
-        id : 0,
-        category: 0,
-        price : 0,
-        number : 0,
-    }
-];
+const iniItemListState = {
+    itemList : [ 
+        {id : 0, category: 1, name:'아메리카노', price : "4500",number : 1,}
+    ]
+};
 
 const selectedItemReducer = (state = iniItemListState , action) => {
+    let findItem = []
+    let newItemList = []
     switch(action.type){
         case SET_ITEM:
-            return [
-                ...state,
-                action.payload
-            ];
+            console.log(action.payload);
+            findItem = state.itemList.find(item => action.payload.id === item.id && action.payload.category === item.category)        
+            if (findItem){
+                console.log("이미 값이 존재합니다.");
+                newItemList = state.itemList.map((item)=> item.id === findItem.id && item.category === findItem.category ? {...findItem, number: findItem.number+1} : item);
+                return {
+                    ...state,
+                    itemList: newItemList
+                }
+            }else {
+                console.log('setItem_payLoad: ');
+                const rcData = {...action.payload, number:1}
+                console.log(rcData);
+                return {
+                    ...state,
+                    itemList: state.itemList.concat(rcData)
+                }
+            }
         case REMOVE_ITEM:
             return {
                 ...state,
@@ -43,17 +66,19 @@ const selectedItemReducer = (state = iniItemListState , action) => {
                 jwtToken: ""
             };
         case PLUS_ITEM:
+            findItem = state.itemList.find(item => action.payload.id === item.id && action.payload.category === item.category)
+            newItemList = state.itemList.map((item)=> item.id === findItem.id && item.category === findItem.category ? {...findItem, number: findItem.number+1} : item);
             return {
                 ...state,
-                is_logined : false,
-                jwtToken: ""
-            };
+                itemList: newItemList
+            }
         case MINUS_ITEM:
-                return {
-                    ...state,
-                    is_logined : false,
-                    jwtToken: ""
-            };
+            findItem = state.itemList.find(item => action.payload.id === item.id && action.payload.category === item.category)
+            newItemList = state.itemList.map((item)=> item.id === findItem.id && item.category === findItem.category && findItem.number > 1 ? {...findItem, number: findItem.number-1} : item);
+            return {
+                ...state,
+                itemList: newItemList
+            }
         case PAY_ITEM:
                 return {
                     ...state,
