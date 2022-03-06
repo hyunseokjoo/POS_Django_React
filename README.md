@@ -14,7 +14,8 @@
 
 
 ### 상품 리스트, 결제리스트 화면
-<img src = "https://user-images.githubusercontent.com/49854618/156946518-6fcaa7b5-a694-4a3d-bdc3-2263b9b44a1e.PNG" width="80%"><img src = "https://user-images.githubusercontent.com/49854618/156946624-5fad029d-56dd-4b66-a6ea-a87f66aee00a.PNG" width="30%">
+<img src = "https://user-images.githubusercontent.com/49854618/156946518-6fcaa7b5-a694-4a3d-bdc3-2263b9b44a1e.PNG" width="80%">
+<img src = "https://user-images.githubusercontent.com/49854618/156946624-5fad029d-56dd-4b66-a6ea-a87f66aee00a.PNG" width="20%">
 
 - 사용자별 카테고리, 상품 검색 기능 
 - 상품 클릭시 상품 결제리스트 연동 기능
