@@ -20,3 +20,22 @@
 - 상품 결제 기능
 
 ### 
+
+
+
+---
+### Dependencies
+- Django 3.0.0+
+- Djangorestframework
+- Djangorestframework-jwt
+- Django-cors-headers
+- Pillow
+- React
+- React-alert
+- React-router-dom
+- Redux
+- Redux-devtools
+- Axios
+- Node-sass
+- Immer
+- Classnames
