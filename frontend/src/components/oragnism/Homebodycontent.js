@@ -24,6 +24,7 @@ const Homebodycontent = () => {
                 // console.log(res.data);
                 if (res.data.length !== 0 ){
                     setCategories(res.data);  
+                    console.log(res.data[0].id);
                     setCategoryID(res.data[0].id) 
                 }
                 
@@ -35,6 +36,7 @@ const Homebodycontent = () => {
 
     //작성자의 한한 category에 해당하는 product가져오기
     useEffect(() =>{
+        console.log(categoryID);
         Axios.get('http://localhost:8000/menu/products/', 
         { 
             headers: { Authorization: `JWT ${jwtToken}` },

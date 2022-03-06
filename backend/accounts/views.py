@@ -17,7 +17,6 @@ class LoginView(APIView):
     permission_classes = [AllowAny,]
     def post(self, request):
         serializer = LoginSerializer(data=request.data)
-
         if not serializer.is_valid(raise_exception=True):
             return Response({"message": "Request Body Error."}, status=status.HTTP_409_CONFLICT)
 

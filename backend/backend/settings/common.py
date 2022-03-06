@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     # local apps
     'accounts',
     'menu',
+    'payment',
 ]
 
 MIDDLEWARE = [

@@ -23,12 +23,21 @@ const NavButtonGrp = () => {
         navigate('/accounts/signup');
     };
 
+    const onClickPaymentHistory = (e) => {
+        navigate('/payment/history');
+    };
+
     return (
         <>
             {is_logined ? (
-                <Button size="small" type="button" color="gray" border="true" onClick={onClickLogout}>
-                    Log out
-                </Button>
+                <div>
+                    <Button size="small" type="button" color="gray" border="true" onClick={onClickLogout}>
+                        Log out
+                    </Button>
+                    <Button size="small" color="cyan" onClick={onClickPaymentHistory}>
+                        결제내역
+                    </Button>
+                </div>
             ) : (
                 <div>
                     <Button size="small" type="button" color="cyan" border="true" onClick={onClickLogin}>

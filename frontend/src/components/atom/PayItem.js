@@ -2,7 +2,7 @@ import React from 'react'
 import classNames from 'classnames';
 import '../../scss/atom/PayItem.scss';
 import { useDispatch } from 'react-redux';
-import { plusItem, minusItem } from '../../store/selectedItemList'
+import { plusItem, minusItem, removeItem } from '../../store/selectedItemList'
 
 const PayItem = ({id, category, name, price, number}) => {
     const dispatch = useDispatch();
@@ -18,6 +18,13 @@ const PayItem = ({id, category, name, price, number}) => {
         }
     };
 
+    const onRemove = (e) => {
+        const {id} = e.target;
+        const list = id.split("/");
+        const product = {id : parseInt(list[0]), category: parseInt(list[1])}
+        dispatch(removeItem(product));
+    }
+
     return (
         <>
             <div  className={classNames('PayItem')} >
@@ -28,16 +35,20 @@ const PayItem = ({id, category, name, price, number}) => {
                     {price * number}
                 </div>
                 <div className='payItem_right'>
-                    <button
+                    <button className='payItem-button'
                     id={id +"/"+ category + "/+"}
                     onClick={onClick}
                     >+</button>
 
                     <div className='number'>{number}</div>
-                    <button
+                    <button className='payItem-button'
                     id={id +"/"+ category + "/-"}
                     onClick={onClick}
                     >-</button>
+                    <button className='payItem-button'
+                    id={id +"/"+ category}
+                    onClick={onRemove}
+                    >삭제</button>
                 </div>
             </div>
         </>

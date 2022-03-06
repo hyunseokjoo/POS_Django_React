@@ -1,0 +1,12 @@
+@import '../common/shared_val.scss';
+@import '../common/shared_mixin.scss';
+
+.Paymentsform {
+    max-width: $max-width;
+    width: 80%;
+    margin: 10px auto;    
+    border-radius: 2%;
+    background-color: white;
+    height: 6%;
+    display: flex;
+}

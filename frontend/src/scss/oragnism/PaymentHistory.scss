@@ -1,0 +1,14 @@
+@import '../common/shared_val.scss';
+@import '../common/shared_mixin.scss';
+
+.PaymentHistory-content {
+    max-width: $max-width;
+    width: 95%;
+    margin: 0 auto;
+    border: 1px solid #bfbfbf;
+    border-radius: 2%;
+    background-color: white;
+    height: 500px;
+
+    @include box-shadow-cyan();
+}

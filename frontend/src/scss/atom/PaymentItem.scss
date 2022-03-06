@@ -1,44 +1,33 @@
 @import '../common/shared_val.scss';
 
-.PayItem{
-    width: 96%;
+.PaymentItem{
+    width: 90%;
     border: 1px solid lightgray;
     border-radius: 10px;
-    margin: 2px;
+    margin: 1px auto;
     display: flex;
 }
 
 
-.payItem_left{
+.PaymentItem_left{
     flex: 4;
     width: 100%;
     margin: 5px auto;
     font-size: 5%;
-}
-
-.payItem_center{
-    flex: 2;
-    width: 100%;
-    font-size: 5%;
-    margin: 5px auto;
-}
-
-.payItem_right{
-    flex: 6;
-    width: 100%;
-    font-size: 5%;
-    margin: 5px auto;
-}
-
-.number{
-    width: 10px;
     text-align: center;
-    display: inline-block;
 }
 
-.payItem-button{
-    margin-left: 2px;
-    font-size: 3px;
-    border: 0;
-    display: inline-block;
+.PaymentItem_center{
+    flex: 5;
+    width: 100%;
+    font-size: 5%;
+    margin: 5px auto;
+}
+
+.PaymentItem_right{
+    flex: 3;
+    width: 100%;
+    font-size: 5%;
+    text-align: center;
+    margin: 5px auto;
 }

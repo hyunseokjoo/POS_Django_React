@@ -1,0 +1,30 @@
+@import '../common/shared_val.scss';
+
+
+.SumPrice{
+    width: 96%;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    margin: 2px;
+}
+
+.SumPrice-container{
+    margin: 2px;
+    font-size: 12px;
+    display: flex;
+}
+
+.SumPrice-left{
+    flex: 1;   
+}
+
+.SumPrice-right{
+    margin-right: 5px;
+    margin-left: auto;
+}
+
+.SumPrice-button{
+    border: 0;
+    margin-left:3px;
+    font-size: 5px;
+}

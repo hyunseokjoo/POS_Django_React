@@ -32,7 +32,6 @@ export const payItem = () => ({ type: PAY_ITEM })
 
 const iniItemListState = {
     itemList : [ 
-        {id : 0, category: 1, name:'아메리카노', price : "4500",number : 1,}
     ]
 };
 
@@ -60,10 +59,11 @@ const selectedItemReducer = (state = iniItemListState , action) => {
                 }
             }
         case REMOVE_ITEM:
+            newItemList = state.itemList.filter((item)=> !(item.id === action.payload.id && item.category === action.payload.category) );
+            console.log(newItemList);
             return {
                 ...state,
-                is_logined : false,
-                jwtToken: ""
+                itemList: newItemList
             };
         case PLUS_ITEM:
             findItem = state.itemList.find(item => action.payload.id === item.id && action.payload.category === item.category)
@@ -80,11 +80,10 @@ const selectedItemReducer = (state = iniItemListState , action) => {
                 itemList: newItemList
             }
         case PAY_ITEM:
-                return {
-                    ...state,
-                    is_logined : false,
-                    jwtToken: ""
-                };
+            return {
+                ...state,
+                itemList: []
+            }
         default:
             return state;
     }

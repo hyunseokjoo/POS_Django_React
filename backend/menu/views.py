@@ -13,8 +13,8 @@ class CategoryViewSet(ModelViewSet):
 
     def get_queryset(self):
         user = self.request.user
+        print(user)
         queryset = user.category.all()
-
         return queryset
 
 class ProductViewset(ModelViewSet):
@@ -29,7 +29,8 @@ class ProductViewset(ModelViewSet):
         print(user)
         if search:
             queryset = user.product.filter(category=search)
+            print(queryset)
         else:
-            queryset = queryset.filter(category='1')
+            queryset = queryset.filter(category='0')
 
         return queryset
