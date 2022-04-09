@@ -2,7 +2,6 @@
 ## 화면 
 - 로그인, 회원가입 화면 
 - 상품 리스트, 결제리스트 화면
-- 결제내역 화면 
 
 ## 로그인, 회원가입 화면 
 <img src = "https://user-images.githubusercontent.com/49854618/156946468-c460d3ee-bce1-4110-ac25-00a7481daa85.PNG" width="80%">
@@ -22,12 +21,6 @@
 - 상품 결제 기능
 
 
----
-### 
-
-
-
----
 ### Dependencies
 - Django 3.0.0+
 - Djangorestframework
